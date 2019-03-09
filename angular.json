@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "@lem/forms": {
+      "root": "projects/lem/forms",
+      "sourceRoot": "projects/lem/forms/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lem/forms/tsconfig.lib.json",
+            "project": "projects/lem/forms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lem/forms/src/test.ts",
+            "tsConfig": "projects/lem/forms/tsconfig.spec.json",
+            "karmaConfig": "projects/lem/forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lem/forms/tsconfig.lib.json",
+              "projects/lem/forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "forms"

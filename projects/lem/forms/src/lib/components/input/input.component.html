@@ -1,0 +1,10 @@
+<div class="lem-forms-input" [ngClass]="{
+        'lem-forms-input--active': active,
+        'lem-forms-input--filled': value
+    }">
+    <div class=" placeholder">{{placeholder}}</div>
+    <input [type]="type" (blur)="active = false" (focus)="active = true" [(ngModel)]="value" />
+    <div class="underline">
+        <div class="fill"></div>
+    </div>
+</div>

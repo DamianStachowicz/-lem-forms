@@ -1,0 +1,59 @@
+$primary-color: #444444;
+$secondary-color: #8e8e8e;
+
+.lem-forms-input {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+.lem-forms-input *:focus {
+    outline: none;
+}
+
+.lem-forms-input .placeholder {
+    color: $secondary-color;
+    line-height: 2rem;
+    position: absolute;
+    top: 1.5rem;
+}
+
+.lem-forms-input .input {
+    height: 0;
+    overflow: hidden;
+}
+
+.lem-forms-input input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: $primary-color;
+    font-size: 1.2rem;
+    height: 2rem;
+    line-height: 2rem;
+    width: 100%;
+}
+
+.lem-forms-input .underline {
+    background-color: $secondary-color;
+    height: .1rem;
+    width: 100%;
+}
+
+.lem-forms-input .underline .fill {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    background-color: $primary-color;
+}
+
+.lem-forms-input--active .placeholder, .lem-forms-input--filled .placeholder {
+    font-size: .75rem;
+    top: 0rem;
+    transition: .2s ease-out;
+}
+
+.lem-forms-input--active .underline .fill {
+    transform: scaleX(1);
+    transition: .2s ease-out;
+}
