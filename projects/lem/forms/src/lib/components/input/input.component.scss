@@ -2,7 +2,6 @@ $primary-color: #444444;
 $secondary-color: #8e8e8e;
 
 .lem-forms-input {
-    padding-bottom: 1.5rem;
     padding-top: 1.5rem;
     position: relative;
 }
@@ -56,4 +55,15 @@ $secondary-color: #8e8e8e;
 .lem-forms-input--active .underline .fill {
     transform: scaleX(1);
     transition: .2s ease-out;
+}
+
+.lem-forms-input .counter, .lem-forms-input div.readonly {
+    color: $secondary-color;
+    font-size: .75rem;
+    text-align: right;
+    width: 100%;
+}
+
+.lem-forms-input input.readonly {
+    color: $secondary-color;
 }

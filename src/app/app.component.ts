@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -22,12 +22,19 @@ export class AppComponent implements OnInit {
 
     private _createForm() {
         this.form = this._formBuilder.group({
-            login: [''],
-            password: ['']
+            login: ['', Validators.required],
+            password: ['', Validators.required],
+            testInput: 'This field is read only'
         });
     }
 
     debug() {
-        console.log(this.form.getRawValue());
+        console.log({
+            value: this.form.getRawValue(),
+            valid: {
+                login: this.form.get('login').valid,
+                password: this.form.get('password').valid,
+            }
+        });
     }
 }

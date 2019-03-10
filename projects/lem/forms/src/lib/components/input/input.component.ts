@@ -37,12 +37,22 @@ export class InputComponent implements ControlValueAccessor {
     @Input() readonly = false;
 
     /**
+     * Max length
+     */
+    @Input() maxlength = 200;
+
+    /**
+     * Should max length be displayed or not
+     */
+    @Input() displayMaxLength = false;
+
+    /**
      * Value
      */
     private _value = '';
 
     /**
-     * Is the input active
+     * Is active
      */
     active = false;
 
