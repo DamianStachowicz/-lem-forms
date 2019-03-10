@@ -3,8 +3,11 @@
         'lem-forms-input--filled': value
     }">
     <div class=" placeholder">{{placeholder}}</div>
-    <input [type]="type" (blur)="active = false" (focus)="active = true" [(ngModel)]="value" />
+    <input [type]="type" (blur)="active = false" (focus)="active = true" [(ngModel)]="value" [maxlength]="maxlength"
+        [readonly]="readonly" [ngClass]="{'readonly': readonly}" />
     <div class="underline">
-        <div class="fill"></div>
+        <div *ngIf="!readonly" class="fill"></div>
     </div>
+    <div *ngIf="displayMaxLength && maxlength" class="counter">{{value?.length}}/{{maxlength}}</div>
+    <div *ngIf="readonly" class="readonly" i18n>read-only</div>
 </div>

@@ -1,8 +1,11 @@
 <div class="container">
     <form [formGroup]="form">
-        <lem-forms-input type="text" i18n-placeholder placeholder="Login" formControlName="login"></lem-forms-input>
+        <lem-forms-input type="text" i18n-placeholder placeholder="Login" formControlName="login" [maxlength]="20"
+            [displayMaxLength]="true">
+        </lem-forms-input>
         <lem-forms-input type="password" i18n-placeholder placeholder="Password" formControlName="password">
         </lem-forms-input>
-        <button (click)="debug()">Submit</button>
+        <lem-forms-input type="text" [readonly]="true" formControlName="testInput"></lem-forms-input>
+        <button (click)="debug()" style="margin-top: 1rem">Submit</button>
     </form>
 </div>
